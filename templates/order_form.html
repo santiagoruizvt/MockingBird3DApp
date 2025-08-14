@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Nuevo Pedido{% endblock %}
+{% block content %}
+<h2>Nuevo Pedido</h2>
+<form method="POST">
+  <div class="mb-3">
+    <label>Nombre de la pieza</label>
+    <input type="text" name="name" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Cliente</label>
+    <input type="text" name="client" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Peso (g)</label>
+    <input type="number" step="0.01" name="weight" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Material</label>
+    <select name="material_id" class="form-control">
+      {% for m in materials %}
+      <option value="{{ m.id }}">{{ m.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label>Tiempo de impresión (h)</label>
+    <input type="number" step="0.01" name="time" class="form-control">
+  </div>
+  <button class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Pedidos en proceso</h2>
+<table class="table">
+<tr><th>Nombre</th><th>Cliente</th><th>Material</th><th>Tiempo (h)</th></tr>
+{% for o in in_progress %}
+<tr><td>{{ o.name }}</td><td>{{ o.client }}</td><td>{{ o.material.name }}</td><td>{{ o.print_time_hours }}</td></tr>
+{% endfor %}
+</table>
+
+<h2>Pedidos terminados</h2>
+<table class="table">
+<tr><th>Nombre</th><th>Cliente</th></tr>
+{% for o in done %}
+<tr><td>{{ o.name }}</td><td>{{ o.client }}</td></tr>
+{% endfor %}
+</table>
+
+<a href="{{ url_for('new_order') }}" class="btn btn-success">Nuevo Pedido</a>
+<a href="{{ url_for('materials') }}" class="btn btn-secondary">Materiales</a>
+<a href="{{ url_for('settings') }}" class="btn btn-warning">Configuración</a>
+{% endblock %}
