@@ -1,0 +1,19 @@
+/* Styles for the site header logo */
+.navbar-brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.brand-logo {
+	height: 32px; /* adjust as needed */
+	width: auto;
+	display: inline-block;
+}
+
+@media (max-width: 576px) {
+	.brand-logo {
+		height: 26px;
+	}
+}
+
