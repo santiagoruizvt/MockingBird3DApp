@@ -27,6 +27,7 @@ class Order(db.Model):
     material_id = db.Column(db.Integer, db.ForeignKey('material.id'))
     print_time_hours = db.Column(db.Float, nullable=False)
     status = db.Column(db.String(50), default="En proceso")
+    quantity = db.Column(db.Integer, nullable=False, default=1)
 
     material = db.relationship("Material")
 

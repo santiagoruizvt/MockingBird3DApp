@@ -102,7 +102,8 @@ def new_order():
             weight_grams=float(request.form["weight"]),
             material_id=material.id,
             print_time_hours=float(request.form["time"]),
-            status="En proceso"
+            status="En proceso",
+            quantity=int(request.form["quantity"])
         )
         db.session.add(order)
         db.session.commit()
